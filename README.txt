@@ -1,0 +1,4 @@
+- Function pointers: no address-of operator on function identifiers
+- Function pointers: initialization of function pointers on seperate lines
+- Function pointers: call function pointers by name, not by pointer syntax
+- Pass by reference: use references in public interfaces, not pointers
