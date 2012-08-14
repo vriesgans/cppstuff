@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdexcept>
 #include "Node.hpp"
 
 namespace structures {
@@ -64,16 +65,25 @@ public:
 	}
 
 	T getFront() {
-		return (count != 0) ? head->getValue() : 0;
+		if (count != 0) {
+			return head->getValue();
+		} else {
+			throw std::out_of_range("Element access on empty container.");
+		}
 	}
 
 	T getBack() {
-		return (count != 0) ? tail->getValue() : 0;
+		if (count != 0) {
+			return tail->getValue();
+		} else {
+			throw std::out_of_range("Element access on empty container.");
+		}
 	}
 
 	int Length() {
 		return count;
 	}
+
 	virtual ~LinkedList() {};
 };
 
